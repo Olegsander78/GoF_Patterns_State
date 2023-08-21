@@ -9,8 +9,9 @@ public class RunningState : GroundedState
     {
         base.Enter();
 
+        Data.Speed = _config.RunningSpeed;
+
         View.StartRunning();
-        Data.Speed = _config.Speed;
     }
 
     public override void Exit()
@@ -23,8 +24,12 @@ public class RunningState : GroundedState
     public override void Update()
     {
         base.Update();
-
+               
         if (IsHorizonatalInputZero())
             StateSwitcher.SwitchState<IdlingState>();
+        else if (!IsHorizonatalInputZero() && IsHorizontalInputSituableForWalking())
+            StateSwitcher.SwitchState<WalkingState>();
+        else if (!IsHorizonatalInputZero() && IsHorizontalInputSituableForSpeedRunning())
+            StateSwitcher.SwitchState<SpeedRunningState>();
     }
 }

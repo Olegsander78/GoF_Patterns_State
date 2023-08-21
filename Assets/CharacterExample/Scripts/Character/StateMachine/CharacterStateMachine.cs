@@ -10,10 +10,14 @@ public class CharacterStateMachine: IStateSwitcher
     {
         StateMachineData data = new StateMachineData();
 
+        data.Speed = character.Config.WalkingStateConfig.WalkingSpeed;
+
         _states = new List<IState>()
         {
             new IdlingState(this, data, character),
+            new WalkingState(this, data, character),
             new RunningState(this, data, character),
+            new SpeedRunningState(this, data, character),
             new JumpingState(this, data, character),
             new FallingState(this, data, character),
         };

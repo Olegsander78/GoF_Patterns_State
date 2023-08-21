@@ -34,6 +34,9 @@ public class GroundedState : MovementState
         base.AddInputActionsCallbacks();
 
         Input.Movement.Jump.started += OnJumpKeyPressed;
+        Input.Movement.Walk.started += OnWalkKeyPressed;
+        Input.Movement.Run.started += OnRunKeyPressed;
+        Input.Movement.SpeedRun.started += OnSpeedRunKeyPressed;
     }
 
     protected override void RemoveInputActionsCallbacks()
@@ -41,8 +44,21 @@ public class GroundedState : MovementState
         base.RemoveInputActionsCallbacks();
 
         Input.Movement.Jump.started -= OnJumpKeyPressed;
+        Input.Movement.Walk.started -= OnWalkKeyPressed;
+        Input.Movement.Run.started -= OnRunKeyPressed;
+        Input.Movement.SpeedRun.started -= OnSpeedRunKeyPressed;
     }
 
     private void OnJumpKeyPressed(InputAction.CallbackContext obj)
         => StateSwitcher.SwitchState<JumpingState>();
+
+    private void OnWalkKeyPressed(InputAction.CallbackContext context)
+        => StateSwitcher.SwitchState<WalkingState>();
+
+    private void OnRunKeyPressed(InputAction.CallbackContext context)
+        => StateSwitcher.SwitchState<RunningState>();
+
+    private void OnSpeedRunKeyPressed(InputAction.CallbackContext context)
+        => StateSwitcher.SwitchState<SpeedRunningState>();
 }
+

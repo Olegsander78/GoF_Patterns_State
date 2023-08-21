@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class MovementState : IState
@@ -13,6 +12,7 @@ public abstract class MovementState : IState
         StateSwitcher = stateSwitcher;
         _character = character;
         Data = data;
+        Data.Speed = _character.Config.WalkingStateConfig.WalkingSpeed;
     }
 
     protected PlayerInput Input => _character.Input;
@@ -50,6 +50,15 @@ public abstract class MovementState : IState
     }
 
     protected bool IsHorizonatalInputZero() => Data.XInput == 0;
+
+    protected bool IsHorizontalInputSituableForWalking()
+        => Data.Speed == _character.Config.WalkingStateConfig.WalkingSpeed;
+
+    protected bool IsHorizontalInputSituableForRunning()
+        => Data.Speed == _character.Config.RunningStateConfig.RunningSpeed;
+
+    protected bool IsHorizontalInputSituableForSpeedRunning()
+        => Data.Speed == _character.Config.SpeedRunningStateConfig.SpeedRunningSpeed;
 
     protected virtual void AddInputActionsCallbacks() { }
 

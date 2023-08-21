@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816e2b2f8b4f5d64aa39cf3db7d714f0, type: 3}
   m_Name: CharacterConfig
   m_EditorClassIdentifier: 
+  _walkingStateConfig:
+    _walkingSpeed: 3.05
   _runningStateConfig:
-    _speed: 8.1
+    _runningSpeed: 7.23
+  _speedRunningStateConfig:
+    _speedRunningSpeed: 13.8
   _airborneStateConfig:
-    _speed: 4
     _jumpingStateConfig:
-      _maxHeight: 7
+      _maxHeight: 5.7
       _timeToReachMaxHeight: 0.5

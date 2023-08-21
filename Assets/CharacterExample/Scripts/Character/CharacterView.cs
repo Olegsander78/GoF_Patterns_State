@@ -4,7 +4,9 @@ using UnityEngine;
 public class CharacterView : MonoBehaviour
 {
     private const string IsIdling = "IsIdling";
+    private const string IsWalking = "IsWalking";
     private const string IsRunning = "IsRunning";
+    private const string IsSpeedRunning = "IsSpeedRunning";
     private const string IsGrounded = "IsGrounded";
     private const string IsJumping = "IsJumping";
     private const string IsFalling = "IsFalling";
@@ -21,8 +23,14 @@ public class CharacterView : MonoBehaviour
     public void StartIdling() => _animator.SetBool(IsIdling, true);
     public void StopIdling() => _animator.SetBool(IsIdling, false);
 
+    public void StartWalking() => _animator.SetBool(IsWalking, true);
+    public void StopWalking() => _animator.SetBool(IsWalking, false);
+
     public void StartRunning() => _animator.SetBool(IsRunning, true);
     public void StopRunning() => _animator.SetBool(IsRunning, false);
+
+    public void StartSpeedRunning() => _animator.SetBool(IsSpeedRunning, true);
+    public void StopSpeedRunning() => _animator.SetBool(IsSpeedRunning, false);
 
     public void StartGrounded() => _animator.SetBool(IsGrounded, true);
     public void StopGrounded() => _animator.SetBool(IsGrounded, false);

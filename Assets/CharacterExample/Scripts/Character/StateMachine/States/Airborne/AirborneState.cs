@@ -11,7 +11,7 @@ public class AirborneState : MovementState
     {
         base.Enter();
 
-        Data.Speed = _config.Speed;
+        //Data.Speed = _config.Speed;
 
         View.StartAirborne();
     }

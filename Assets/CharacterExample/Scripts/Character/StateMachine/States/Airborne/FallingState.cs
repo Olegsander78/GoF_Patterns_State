@@ -29,8 +29,12 @@ public class FallingState : AirborneState
 
             if (IsHorizonatalInputZero())
                 StateSwitcher.SwitchState<IdlingState>();
-            else
+            else if (!IsHorizonatalInputZero() && IsHorizontalInputSituableForWalking())
+                StateSwitcher.SwitchState<WalkingState>();
+            else if (!IsHorizonatalInputZero() && IsHorizontalInputSituableForRunning())
                 StateSwitcher.SwitchState<RunningState>();
+            else if (!IsHorizonatalInputZero() && IsHorizontalInputSituableForSpeedRunning())
+                StateSwitcher.SwitchState<SpeedRunningState>();
         }
     }
 }
