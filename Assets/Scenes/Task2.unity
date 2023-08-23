@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 175997843}
   - component: {fileID: 175997842}
   m_Layer: 0
-  m_Name: 8.Lunch
+  m_Name: Lunch_MoveToWork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateSwitcher: {fileID: 398280423}
   _workerStateResolver: {fileID: 28936289}
-  _nextStateType: 3
+  _nextStateType: 1
 --- !u!4 &175997843
 Transform:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398280422}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &190679675
 PrefabInstance:
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 209631275}
   - component: {fileID: 209631276}
   m_Layer: 0
-  m_Name: 2.Work
+  m_Name: Work_MoveToSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398280422}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &209631276
 MonoBehaviour:
@@ -666,53 +666,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 245135806}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &247222101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 247222103}
-  - component: {fileID: 247222102}
-  m_Layer: 0
-  m_Name: 5.MoveToWork
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &247222102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247222101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3cffbe2b47e1847b7a504f0c10c17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateSwitcher: {fileID: 398280423}
-  _workerDispatcher: {fileID: 28936289}
-  _placeTarget: {fileID: 7305385374242908411}
---- !u!4 &247222103
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247222101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 398280422}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254946764
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +722,7 @@ GameObject:
   - component: {fileID: 285105357}
   - component: {fileID: 285105356}
   m_Layer: 0
-  m_Name: 6.Work
+  m_Name: Work_MoveToRest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateSwitcher: {fileID: 398280423}
   _workerStateResolver: {fileID: 28936289}
-  _nextStateType: 7
+  _nextStateType: 3
 --- !u!4 &285105357
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398280422}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &306571413
 PrefabInstance:
@@ -1228,15 +1181,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1361368274}
-  - {fileID: 1558354858}
   - {fileID: 209631275}
-  - {fileID: 1226960840}
   - {fileID: 1748706330}
-  - {fileID: 247222103}
   - {fileID: 285105357}
-  - {fileID: 453446602}
   - {fileID: 175997843}
-  - {fileID: 1937523445}
+  - {fileID: 1833208660}
   m_Father: {fileID: 28936286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1264,14 +1213,14 @@ MonoBehaviour:
     state: {fileID: 1226960841}
   - type: 4
     state: {fileID: 1748706329}
-  - type: 1
-    state: {fileID: 247222102}
-  - type: 2
-    state: {fileID: 285105356}
   - type: 7
     state: {fileID: 453446601}
   - type: 6
     state: {fileID: 175997842}
+  - type: 1
+    state: {fileID: 1558354859}
+  - type: 2
+    state: {fileID: 285105356}
   - type: 3
     state: {fileID: 1937523446}
 --- !u!1 &410087039
@@ -1400,7 +1349,7 @@ GameObject:
   - component: {fileID: 453446602}
   - component: {fileID: 453446601}
   m_Layer: 0
-  m_Name: 7.MoveToLunch
+  m_Name: MoveToLunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1428,13 +1377,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453446600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 398280422}
-  m_RootOrder: 7
+  m_Father: {fileID: 1833208660}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &534484133
 PrefabInstance:
@@ -2168,7 +2117,7 @@ GameObject:
   - component: {fileID: 1226960840}
   - component: {fileID: 1226960841}
   m_Layer: 0
-  m_Name: 3.MoveToSmoking
+  m_Name: MoveToSmoking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2181,13 +2130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226960839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 398280422}
-  m_RootOrder: 3
+  m_Father: {fileID: 1833208660}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1226960841
 MonoBehaviour:
@@ -2362,7 +2311,7 @@ GameObject:
   - component: {fileID: 1361368274}
   - component: {fileID: 1361368275}
   m_Layer: 0
-  m_Name: 0.Rest
+  m_Name: Rest_MoveToWork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2507,7 +2456,7 @@ GameObject:
   - component: {fileID: 1558354858}
   - component: {fileID: 1558354859}
   m_Layer: 0
-  m_Name: '1.MoveToWork '
+  m_Name: 'MoveToWork '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2520,13 +2469,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558354857}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 398280422}
-  m_RootOrder: 1
+  m_Father: {fileID: 1833208660}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558354859
 MonoBehaviour:
@@ -2634,7 +2583,7 @@ GameObject:
   - component: {fileID: 1748706330}
   - component: {fileID: 1748706329}
   m_Layer: 0
-  m_Name: 4.Smoking
+  m_Name: Smoking_MoveToLunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2654,7 +2603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateSwitcher: {fileID: 398280423}
   _workerStateResolver: {fileID: 28936289}
-  _nextStateType: 1
+  _nextStateType: 7
 --- !u!4 &1748706330
 Transform:
   m_ObjectHideFlags: 0
@@ -2668,7 +2617,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398280422}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1760858418
 PrefabInstance:
@@ -2750,6 +2699,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1760858418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1833208659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833208660}
+  m_Layer: 0
+  m_Name: Movement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833208660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833208659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1558354858}
+  - {fileID: 1226960840}
+  - {fileID: 453446602}
+  - {fileID: 1937523445}
+  m_Father: {fileID: 398280422}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1856400976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2841,7 +2825,7 @@ GameObject:
   - component: {fileID: 1937523445}
   - component: {fileID: 1937523446}
   m_Layer: 0
-  m_Name: 9.MoveToRest
+  m_Name: MoveToRest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2854,13 +2838,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937523444}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 398280422}
-  m_RootOrder: 9
+  m_Father: {fileID: 1833208660}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1937523446
 MonoBehaviour:
