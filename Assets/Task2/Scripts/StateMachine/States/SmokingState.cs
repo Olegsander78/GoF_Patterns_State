@@ -42,7 +42,7 @@ namespace Task2
         
         protected override IEnumerator Do()
         {            
-            yield return new WaitForSecondsRealtime(_workerStateResolver.Config.RestingStateConfig.RestingTime);
+            yield return new WaitForSecondsRealtime(_workerStateResolver.Config.SmokingStateConfig.SmokingTime);
 
             Debug.Log($"End coroutine Smoke");
             _stateSwitcher.SwitchState(_nextStateType);

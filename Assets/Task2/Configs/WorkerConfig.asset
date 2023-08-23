@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: WorkerConfig
   m_EditorClassIdentifier: 
   _restingStateConfig:
-    _restingTime: 3.2
+    _restingTime: 3
   _goingStateConfig:
-    _goingSpeed: 3.6
+    _goingSpeed: 4
   _workingStateConfig:
-    _workingTime: 3.5
+    _workingTime: 3
+  _smokingStateConfig:
+    _smokingTime: 3
+  _lunchStateConfig:
+    _havingLunchTime: 4
