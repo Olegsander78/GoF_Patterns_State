@@ -27,7 +27,6 @@ namespace Task2
             _currentStateType = stateType;
             _currentState = currentState;
             _currentState.Enter();
-//            Debug.Log($"{_currentState} , {_currentStateType}");
         }
 
         [Serializable]

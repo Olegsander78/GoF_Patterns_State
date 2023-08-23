@@ -43,7 +43,6 @@ namespace Task2
             View.StopDoAnything();
         }
 
-
         protected override IEnumerator Do()
         {
             var delay = new WaitForFixedUpdate();

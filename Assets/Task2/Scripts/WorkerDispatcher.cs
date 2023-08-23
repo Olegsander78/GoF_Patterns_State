@@ -14,7 +14,6 @@ namespace Task2
         private void Awake()
         {
             _view.Initialize();
-            //_controller = GetComponent<CharacterController>();
             _stateMachine.SwitchState(_stateMachine.CurrentStateType);
         }
     }
