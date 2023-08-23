@@ -3,16 +3,18 @@ using UnityEngine;
 
 namespace Task2
 {   
-    public enum PlaceType
+    public enum PlaceTypes
     {
         REST_PLACE = 0,
-        WORK_PLACE = 1
+        WORK_PLACE = 1,
+        SMOKING_PLACE = 2,
+        LUNCH_PLACE = 3
     }
 
     public class Place : MonoBehaviour
     {
-        [SerializeField] private PlaceType _placeType;
+        [SerializeField] private PlaceTypes _placeType;
 
-        public PlaceType PlaceType => _placeType;
+        public PlaceTypes PlaceType => _placeType;
     }
 }

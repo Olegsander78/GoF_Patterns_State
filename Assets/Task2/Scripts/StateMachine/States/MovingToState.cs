@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Task2
 {
-    public class GoToState : StateCoroutine
+    public class MovingToState : StateCoroutine
     {       
         [SerializeField] private WorkerStateMachine _stateSwitcher;
-        [SerializeField] private WorkerDispatcher _workerDispatcher;
+        [SerializeField] private WorkerStateResolver _workerDispatcher;
         [SerializeField] private Place _placeTarget;
+
         protected WorkerView View => _workerDispatcher.View;
 
         private Vector3 _targetPosition;
@@ -49,31 +51,43 @@ namespace Task2
             while (true)
             {
                 yield return delay;
-                MoveTransform();
+                Move();
             }
         }
 
-        private void MoveTransform()
+        private void Move()
         {
             var currentPosition = _workerDispatcher.transform.position;
-            //var targetPosition = _placeTarget.transform.position;
             var maxDistanceDelta = _workerDispatcher.Config.GoingStateConfig.GoingSpeed * Time.deltaTime;
             var newPosition = Vector3.MoveTowards(currentPosition, _targetPosition, maxDistanceDelta);
             _workerDispatcher.transform.position = newPosition;
 
+            RotateTowards();
+            SwitchToNextState();           
+        }
+
+        private void RotateTowards()
+        {
             var currentRotation = _workerDispatcher.transform.rotation;
             var direction = (_targetPosition - _workerDispatcher.transform.position).normalized;
             var targetRotation = Quaternion.LookRotation(direction, Vector3.up);
             var newRotation = Quaternion.Slerp(currentRotation, targetRotation, 3f * Time.deltaTime);
             _workerDispatcher.transform.rotation = newRotation;
+        }
 
-            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceType.WORK_PLACE)
-            {
-                _stateSwitcher.SwitchState(StateType.WORK);
-            }
+        private void SwitchToNextState()
+        {
+            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceTypes.WORK_PLACE)
+                _stateSwitcher.SwitchState(StateTypes.WORK);
 
-            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceType.REST_PLACE)
-                _stateSwitcher.SwitchState(StateType.REST);
+            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceTypes.REST_PLACE)
+                _stateSwitcher.SwitchState(StateTypes.REST);
+
+            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceTypes.SMOKING_PLACE)
+                _stateSwitcher.SwitchState(StateTypes.SMOKE);
+
+            if (_targetPosition == _workerDispatcher.transform.position && _placeTarget.PlaceType == PlaceTypes.LUNCH_PLACE)
+                _stateSwitcher.SwitchState(StateTypes.LUNCH);
         }
     }
 }

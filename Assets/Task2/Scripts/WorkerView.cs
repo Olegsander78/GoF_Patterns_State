@@ -33,7 +33,16 @@ namespace Task2
             _animator.StopPlayback();
             _animator.CrossFade(WorkHash, 0.15f);
         }
-
+        public void StartSmoking()
+        {
+            _animator.StopPlayback();
+            _animator.CrossFade(WorkHash, 0.15f);
+        }
+        public void StartHavingLunch()
+        {
+            _animator.StopPlayback();
+            _animator.CrossFade(WorkHash, 0.15f);
+        }
         public void StopDoAnything() => _animator.StopPlayback();
     }
 }

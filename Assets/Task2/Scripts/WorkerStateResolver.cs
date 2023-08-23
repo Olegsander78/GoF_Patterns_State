@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Task2
 {
-    public class WorkerDispatcher : MonoBehaviour
+    public class WorkerStateResolver : MonoBehaviour
     {
         [SerializeField] private WorkerConfig _config;
         [SerializeField] private WorkerView _view;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Task2
 {
-    public class WorkState : StateCoroutine
+    public class HaveLunchState : StateCoroutine
     {
         [SerializeField] private WorkerStateMachine _stateSwitcher;
         [SerializeField] private WorkerStateResolver _workerStateResolver;
@@ -20,11 +20,11 @@ namespace Task2
 
             if (_coroutine == null)
             {
-                Debug.Log($"Start coroutine Work");
+                Debug.Log($"Start coroutine HaveLunch");
                 _coroutine = StartCoroutine(Do());
             }
 
-            View.StartWorking();
+            View.StartHavingLunch();
         }
 
         public override void Exit()
@@ -39,11 +39,12 @@ namespace Task2
 
             View.StopDoAnything();
         }
-       
+        
         protected override IEnumerator Do()
         {            
-            yield return new WaitForSecondsRealtime(_workerStateResolver.Config.WorkingStateConfig.WorkingTime);
-            Debug.Log($"End coroutine Work");
+            yield return new WaitForSecondsRealtime(_workerStateResolver.Config.RestingStateConfig.RestingTime);
+
+            Debug.Log($"End coroutine Havelunch");
             _stateSwitcher.SwitchState(_nextStateType);
         }
     }

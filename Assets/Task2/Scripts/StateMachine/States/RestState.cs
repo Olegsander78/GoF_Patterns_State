@@ -6,8 +6,9 @@ namespace Task2
     public class RestState : StateCoroutine
     {
         [SerializeField] private WorkerStateMachine _stateSwitcher;
-        [SerializeField] private WorkerDispatcher _workerDispatcher;
-        protected WorkerView View => _workerDispatcher.View;
+        [SerializeField] private WorkerStateResolver _workerStateResolver;
+        [SerializeField] private StateTypes _nextStateType;
+        protected WorkerView View => _workerStateResolver.View;
 
         private Coroutine _coroutine;
 
@@ -41,10 +42,10 @@ namespace Task2
         
         protected override IEnumerator Do()
         {            
-            yield return new WaitForSecondsRealtime(_workerDispatcher.Config.RestingStateConfig.RestingTime);
+            yield return new WaitForSecondsRealtime(_workerStateResolver.Config.RestingStateConfig.RestingTime);
 
             Debug.Log($"End coroutine Rest");
-            _stateSwitcher.SwitchState(StateType.GOTO_WORK);
+            _stateSwitcher.SwitchState(_nextStateType);
         }
     }
 }
